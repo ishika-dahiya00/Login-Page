@@ -88,6 +88,28 @@ li>a {
     text-decoration: none;
 }
 
+.hero-section .container {
+    height: inherit;
+}
+
+.hero-content {
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content p {
+    text-transform: uppercase;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+}
+
+.hero-content button {
+    margin-top: 2rem;
+    background-color: #cccccc53;
+    border: none;
+    padding: 1rem 2rem;
+}
 
 main {
     min-height: 80vh;
@@ -100,7 +122,7 @@ main {
 .login {
     min-height: 30rem;
     min-width: 40vw;
-    background-color: aqua;
+    background-color: transparent;
 }
 
 .grid-two--column {
@@ -120,6 +142,20 @@ main {
     background-position: center;
     color: #fff;
     padding: 3rem 2rem;
+}
+
+.registration .form-text {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/img3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login .form-text {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3)), url("images/img2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .form-text p {
@@ -186,4 +222,54 @@ input[type="submit"] {
     max-width: 20rem;
     background-color: var(--var-primary-color);
     color: #fff;
+}
+
+.registration:not(.login-display) {
+    display: none;
+}
+
+.login-display .registration {
+    display: block;
+}
+
+.login-display .login {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-two--column {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .reg-head main {
+        padding-top: 10vh;
+    }
+
+    .reg-head .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .reg-head .container .logo {
+        padding-top: 2rem;
+    }
+
+    .registration,
+    .login {
+        min-width: 90vw;
+    }
+
+    .form-text {
+        order: 1;
+    }
+
+    .registration,
+    .login {
+        order: 0;
+    }
+
+    .form-text p {
+        width: 25ch;
+    }
 }
